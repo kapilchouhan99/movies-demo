@@ -1,0 +1,23 @@
+<h1>Listing all Movies</h1>
+<%= form_tag(movies_path, method: 'get') do %>
+  <%= text_field_tag(:search, params[:search]) %>
+  <%= submit_tag("Search", name: nil) %>
+<% end %>
+<table>
+  <tr>
+    <th>Movie</th>
+    <th>Description</th>
+    <th>Year</th>
+    <th>Actor</th>
+    <th>Review</th>
+  </tr>
+  <% @movies.each do |movie| %>
+    <tr>
+      <td><%= link_to "#{movie.title}", movie_path(movie) %></td>
+      <td><%= movie.description %></td>
+      <td><%= movie.year %></td>
+      <td><%= movie_actors(movie) %></td>
+      <td><%= review(movie) %></td>
+    </tr>
+  <% end %>
+</table>
