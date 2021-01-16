@@ -1,24 +1,42 @@
-# README
+# movies-demo
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a [Ruby on Rails](https://rubyonrails.org/) based implementation of the **Movies list**.
 
-Things you may want to cover:
 
-* Ruby version
+## Built with
 
-* System dependencies
+- Ruby 2.6.1
 
-* Configuration
+- Rails 5.2.0
+  
 
-* Database creation
+## Quick Start
 
-* Database initialization
+You need to have bundler installed in your system.
 
-* How to run the test suite
+**Step 1:** You can install it by typing:
 
-* Services (job queues, cache servers, search engines, etc.)
+```bash
+$ gem install bundler
+```
 
-* Deployment instructions
 
-* ...
+**Step 2:** Open of a terminal window in the root of the project **/movies-demo** and type :
+
+```bash
+$ bundle install
+$ rails db:create
+$ rails db:migrate
+```
+**Step 3:** Run rake task
+
+```bash
+$ rails import_csv:import_movie_review
+```
+
+
+**Step 4:** Run the server:
+
+```bash
+$ rails s
+```
